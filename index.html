@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junta de Padres - Colegio Tlahtoani</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --verde-primario: #d8e6a9;
+            --verde-secundario: #e8f5c8;
+            --azul-bajito: #d4e3f7;
+            --amarillo-bajito: #f9f3d0;
+            --morado-bajito: #e8d4f5;
+            --texto-oscuro: #2c3e50;
+            --acento: #8bc34a;
+            --transicion: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: var(--texto-oscuro);
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            background-color: #f9fbf3;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--verde-primario), var(--acento));
+            color: var(--texto-oscuro);
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 30px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-bottom: 5px solid var(--acento);
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .logo-colegio {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+        
+        .header-image-container {
+            width: 100%;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .header-image {
+            max-width: 100%;
+            height: auto;
+            max-height: 350px;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+        }
+        
+        h2 {
+            color: var(--texto-oscuro);
+            border-bottom: 3px solid var(--acento);
+            padding-bottom: 8px;
+            margin-top: 40px;
+            font-size: 1.8rem;
+        }
+        
+        h3 {
+            color: var(--texto-oscuro);
+            font-size: 1.4rem;
+            margin-top: 25px;
+        }
+        
+        h4 {
+            color: var(--texto-oscuro);
+            font-size: 1.2rem;
+        }
+        
+        .section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            border-left: 5px solid var(--verde-primario);
+        }
+        
+        .staff-card {
+            background-color: var(--verde-secundario);
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            border-left: 5px solid var(--acento);
+        }
+        
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .price-table th {
+            background-color: var(--acento);
+            color: white;
+            font-weight: 600;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .price-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .price-table tr:nth-child(even) {
+            background-color: var(--verde-secundario);
+        }
+        
+        .price-table tr:hover {
+            background-color: var(--verde-primario);
+        }
+        
+        .highlight {
+            background-color: var(--amarillo-bajito);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #ffc107;
+            margin: 20px 0;
+        }
+        
+        .costume-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: var(--morado-bajito);
+            border-left: 5px solid #9c27b0;
+        }
+        
+        .uniform-info {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: var(--azul-bajito);
+            border-radius: 8px;
+            border-left: 5px solid #2196f3;
+        }
+        
+        ul, ol {
+            padding-left: 25px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        a {
+            color: #2e7d32;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 25px;
+            background: linear-gradient(135deg, var(--verde-primario), var(--acento));
+            color: var(--texto-oscuro);
+            border-radius: 10px;
+            font-weight: 500;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 0 15px;
+            }
+            
+            header {
+                padding: 20px;
+            }
+            
+            .logo-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .logo-colegio {
+                width: 60px;
+                height: 60px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section {
+                padding: 20px 15px;
+            }
+            
+            .uniform-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <!-- Reemplaza "logo-colegio.png" con la ruta correcta de tu imagen de logo -->
+            <img src="logo-colegio.png" alt="Logo Colegio Tlahtoani" class="logo-colegio">
+            <h1>Junta de Padres - Colegio Tlahtoani</h1>
+        </div>
+        <p style="font-size: 1.1rem; font-weight: 500;">Comunicación entre escuela y padres de familia para el mejor desarrollo de nuestros alumnos</p>
+        
+        <div class="header-image-container">
+            <!-- Reemplaza "imagen-central.jpg" con la ruta correcta de tu imagen central -->
+            <img src="imagen-central.jpg" alt="Comunidad escolar" class="header-image">
+        </div>
+    </header>
+
+    <div class="section" style="background-color: var(--verde-secundario);">
+        <h2>Objetivo Principal</h2>
+        <p style="font-size: 1.1rem;">Tener mayor comunicación entre escuela y padres de familia para mantenerlos informados sobre las actividades y decisiones del colegio, así como cualquier inquietud que pueda surgir en el momento para poder dar seguimiento y solución.</p>
+    </div>
+
+    <div class="section">
+        <h2>Nuestro Personal</h2>
+        <p style="font-style: italic; margin-bottom: 20px;">Conoce a los nuevos integrantes de nuestro equipo:</p>
+        
+        <div class="staff-card">
+            <h3>Lic. Esmeralda Vela González - Dirección</h3>
+            <ul>
+                <li>Estudió la carrera en intervención educativa.</li>
+                <li>Proceso de titulación en maestría en educación.</li>
+                <li>9 años de experiencia dentro del ámbito educativo.</li>
+                <li><strong>Objetivo:</strong> Trabajar en equipo para lograr grandes avances significativos en el área académica y social.</li>
+                <li>Desarrollar en los alumnos la capacidad de resolver conflictos de forma positiva.</li>
+                <li>Crear en los alumnos seguridad y confianza dentro y fuera del aula.</li>
+                <li>Formar alumnos reflexivos.</li>
+            </ul>
+        </div>
+        
+        <div class="staff-card" style="background-color: var(--azul-bajito); border-left-color: #2196f3;">
+            <h3>Lic. Deyanira Ortega - Departamento de Psicopedagogía</h3>
+            <ul>
+                <li>Estudió psicología educativa con enfoque en psicología infantil y adolescencia.</li>
+                <li>Diplomado en trastornos neurológicos del desarrollo infantil (TDAH y TEA).</li>
+                <li>Docente en educación especial (preescolar a secundaria).</li>
+                <li>Estudios en problemas de conducta, estimulación temprana.</li>
+                <li>Actualmente estudia un diplomado en terapia cognitivo conductual.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section" style="background-color: var(--amarillo-bajito); border-left-color: #ffc107;">
+        <h2>Citas Individuales</h2>
+        <p>Seguiremos retomando las citas trimestrales de manera individual, con la finalidad de seguir dando continuidad a los procesos de aprendizaje de cada uno de nuestros alumnos.</p>
+        <div class="highlight" style="background-color: white; border-left-color: var(--acento);">
+            <ul>
+                <li>Las citas quedan abiertas si en algún momento surge alguna inquietud podrán pasar al área de dirección.</li>
+                <li>Si se solicita cita especialmente con la maestra de su grupo, es necesario notificar con tiempo para agendar dicha cita.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Uniforme</h2>
+        <div class="uniform-info">
+            <div>
+                <p style="font-size: 1.1rem;">Es importante que todos los días los alumnos porten su uniforme, especialmente los días lunes su uniforme de gala, ya que realizamos nuestros honores a nuestra bandera.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" style="background-color: var(--morado-bajito); border-left-color: #9c27b0;">
+        <h2>Horarios</h2>
+        <p>El colegio recibe a los alumnos a partir de 7:30 a.m. Se abre puerta a las 7:45 a.m. y se cierra puerta a las 8:15 a.m. Una vez pasando la hora que se cierra puerta, el alumno no podrá ingresar a sus clases, esto con la finalidad de formar la responsabilidad y compromiso.</p>
+        <div class="highlight">
+            <ul>
+                <li>La hora de salida es de 2:30 p.m. a 2:45 p.m.</li>
+                <li>Después de las 3:00 p.m. se cobrará $45 pesos.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section" style="background-color: var(--verde-secundario);">
+        <h2>Método DEHAN</h2>
+        <p>Los pagos de dicho método se deben realizar cada mes en las fechas del 24 al 31 de cada mes con el costo de $250, es con la finalidad de que el alumno pueda seguir avanzando.</p>
+        <ul>
+            <li>Dicho método se trabaja dentro del aula tres veces a la semana con un tiempo de 45 minutos.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Pago para el siguiente ciclo escolar (Amco - Ciclo 2025-2026)</h2>
+        <p>Como cada año, se presentan los precios del siguiente ciclo escolar con promociones diseñadas para brindar mayores beneficios a la comunidad, comenzando a partir del <strong>1ro de enero</strong>.</p>
+        
+        <h3>Tabla de precios:</h3>
+        
+        <h4>Grado: Kinder</h4>
+        <p>Programa: <em>At The Top + Enlace + Happy</em></p>
+        <table class="price-table">
+            <tr>
+                <th>Fecha límite</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>Hasta el 31 de enero</td>
+                <td>$3,935.20</td>
+            </tr>
+            <tr>
+                <td>Hasta el 31 de marzo</td>
+                <td>$4,427.10</td>
+            </tr>
+            <tr>
+                <td>Hasta el 30 de junio</td>
+                <td>$4,919.00</td>
+            </tr>
+            <tr>
+                <td>Hasta el 31 de julio</td>
+                <td>$5,619.00</td>
+            </tr>
+            <tr>
+                <td>A partir del 1º de agosto</td>
+                <td><strong>Precio de Lista: $5,899.00</strong></td>
+            </tr>
+        </table>
+        
+        <h4>Grado: Primaria</h4>
+        <p>Programa: <em>Lead + Enlace + Happy</em></p>
+        <table class="price-table">
+            <tr>
+                <th>Fecha límite</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>Hasta el 31 de enero</td>
+                <td>$3,869.25</td>
+            </tr>
+            <tr>
+                <td>Hasta el 31 de marzo</td>
+                <td>$4,385.15</td>
+            </tr>
+            <tr>
+                <td>Hasta el 30 de junio</td>
+                <td>$5,159.00</td>
+            </tr>
+            <tr>
+                <td>Hasta el 31 de julio</td>
+                <td>$5,809.00</td>
+            </tr>
+            <tr>
+                <td>A partir del 1º de agosto</td>
+                <td><strong>Precio de Lista: $6,049.00</strong></td>
+            </tr>
+        </table>
+        
+        <h3>Detalles importantes:</h3>
+        <ol>
+            <li><strong>Compra del sistema:</strong><br>
+                Para realizar la compra del sistema, es necesario ingresar a la página:<br>
+                <a href="http://compradelibros.amco.me" target="_blank">compradelibros.amco.me</a><br>
+                Además, se debe utilizar el <strong>código único de tu colegio:</strong><br>
+                <strong>JEPAJ</strong>
+            </li>
+            <li><strong>Opciones de pago:</strong><br>
+                Se puede realizar el pago en <strong>3, 6, 9 y 12 pagos fijos</strong>, utilizando las tarjetas participantes de los siguientes bancos:
+                <ul>
+                    <li>HSBC</li>
+                    <li>Bancomer</li>
+                    <li>Santander</li>
+                    <li>Banamex</li>
+                    <li>Scotiabank</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>Vestuario de Fin de Curso</h2>
+        
+        <div class="costume-section">
+            <h3>Primer, Segundo y Tercer Grado (Varones)</h3>
+            <ul>
+                <li><strong>Cantidad:</strong> 40 varones</li>
+                <li><strong>Vestuario:</strong>
+                    <ul>
+                        <li>40 conjuntos de:
+                            <ul>
+                                <li>Playera a juego con el color de su grado</li>
+                                <li>Franjas de contraste en el pecho</li>
+                                <li>Pantalón blanco con elástico en la cintura y corte capri</li>
+                                <li>Accesorio de plumas en ambas muñecas</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Precio unitario (P/U):</strong> $750</li>
+            </ul>
+        </div>
+        
+        <div class="costume-section" style="background-color: var(--azul-bajito); border-left-color: #2196f3;">
+            <h3>Cuarto, Quinto y Sexto Grado (Varones)</h3>
+            <ul>
+                <li><strong>Cantidad:</strong> 17 varones</li>
+                <li><strong>Vestuario:</strong>
+                    <ul>
+                        <li>17 conjuntos de:
+                            <ul>
+                                <li>Playera a juego con el color de su grado</li>
+                                <li>Franjas de contraste en el pecho</li>
+                                <li>Pantalón blanco con elástico en la cintura y corte capri</li>
+                                <li>Accesorio de plumas en ambas muñecas</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Precio unitario (P/U):</strong> $800</li>
+            </ul>
+        </div>
+        
+        <div class="costume-section">
+            <h3>Primer, Segundo y Tercer Grado (Niñas)</h3>
+            <ul>
+                <li><strong>Cantidad:</strong> 43 niñas</li>
+                <li><strong>Descripción del traje:</strong>
+                    <ul>
+                        <li>Unitardos de lentejuelas</li>
+                        <li>Incluyen plumas en la cadera y hombros</li>
+                        <li>Colores asignados por grado: amarillo, azul y rojo (cada grado tiene un color específico)</li>
+                        <li>Accesorio incluido: Peineta con plumas que combina con el traje</li>
+                    </ul>
+                </li>
+                <li><strong>Precio por unidad (P/U):</strong> $850</li>
+            </ul>
+        </div>
+        
+        <div class="costume-section" style="background-color: var(--amarillo-bajito); border-left-color: #ffc107;">
+            <h3>Cuarto, Quinto y Sexto Grado (Niñas)</h3>
+            <ul>
+                <li><strong>Cantidad:</strong> 15 niñas</li>
+                <li><strong>Descripción del traje:</strong>
+                    <ul>
+                        <li>Unitardos de lentejuelas</li>
+                        <li>Incluyen plumas y flecos</li>
+                        <li>Colores asignados por grado: amarillo, rojo y azul (cada grado tiene un color específico)</li>
+                        <li>Accesorio incluido: Peineta con plumas que combina con el traje</li>
+                    </ul>
+                </li>
+                <li><strong>Precio por unidad (P/U):</strong> $1,150</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section" style="background-color: var(--verde-primario);">
+        <h2>Fechas para la Fotografía de Toga</h2>
+        <p style="font-size: 1.2rem; font-weight: 500;">Serán los días <strong>28, 29 y 30 de mayo</strong>.</p>
+    </div>
+
+    <div class="section" style="background-color: var(--morado-bajito); border-left-color: #9c27b0;">
+        <h2>Clases Extra Curriculares</h2>
+        <ul style="font-size: 1.1rem;">
+            <li><strong>Clase de Jazz</strong></li>
+            <li><strong>Clase de Hapkido</strong></li>
+        </ul>
+    </div>
+
+    <footer>
+        <p style="font-size: 1.1rem; margin-bottom: 10px;">Colegio Tlahtoani - Junta de Padres</p>
+        <p>Contacto: [Inserte información de contacto aquí]</p>
+    </footer>
+</body>
+</html>

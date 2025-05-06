@@ -78,15 +78,15 @@
         }
         
         .header-image-container {
-            width: 100%;
             margin: 25px auto 0;
-            display: flex;
+            display: inline-flex;
             justify-content: center;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             border: 3px solid white;
             transition: var(--transicion);
+            max-width: 100%;
         }
         
         .header-image-container:hover {
@@ -95,10 +95,11 @@
         }
         
         .header-image {
-            width: 100%;
+            max-width: 100%;
+            height: auto;
             max-height: 350px;
             object-fit: contain;
-            transition: var(--transicion);
+            display: block;
         }
         
         h1 {
@@ -190,7 +191,7 @@
         }
         
         .staff-section {
-            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(248,248,248,0.9)));
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(248,248,248,0.9));
             border: 1px solid rgba(0,0,0,0.05);
         }
         
@@ -395,55 +396,30 @@
             border-bottom: 1px solid var(--acento);
         }
         
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            padding: 30px;
-            background: linear-gradient(135deg, var(--verde-primario), var(--acento));
-            color: var(--texto-oscuro);
-            border-radius: 15px;
-            font-weight: 500;
-            box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        footer::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, var(--rosa-bajito), var(--morado-bajito), var(--azul-bajito), var(--verde-primario), var(--acento));
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--acento);
-            font-size: 1.2rem;
-            transition: var(--transicion);
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            border: none;
-        }
-        
-        .social-links a:hover {
-            transform: translateY(-3px) scale(1.1);
+        .contact-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--acento), #7cb342);
             color: white;
-            background-color: var(--acento);
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: var(--transicion);
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+        
+        .contact-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        .contact-btn i {
+            margin-right: 8px;
         }
         
         .floating-btn {
@@ -520,6 +496,11 @@
             
             .header-image {
                 max-height: 250px;
+            }
+            
+            .contact-btn {
+                padding: 12px 25px;
+                font-size: 1rem;
             }
         }
         
@@ -657,9 +638,9 @@
         </div>
         
         <div style="text-align: center; margin-top: 30px;">
-            <button style="background: linear-gradient(135deg, var(--acento), #7cb342); color: white; border: none; padding: 12px 25px; border-radius: 30px; font-weight: 600; cursor: pointer; box-shadow: 0 3px 10px rgba(0,0,0,0.1); transition: var(--transicion);">
-                <i class="fas fa-calendar-alt" style="margin-right: 8px;"></i> Solicitar Cita
-            </button>
+            <a href="https://chatwith.io/es/s/63b7348567162" class="contact-btn">
+                <i class="fas fa-calendar-alt"></i> Solicitar Cita
+            </a>
         </div>
     </div>
 
@@ -883,24 +864,14 @@
         </ul>
     </div>
 
-    <a href="#" class="floating-btn">
-        <i class="fas fa-comment-dots"></i>
-    </a>
+    <div style="text-align: center; margin: 50px 0;">
+        <a href="https://beacons.ai/colegiotlahtoanii" class="contact-btn" style="font-size: 1.3rem; padding: 18px 35px;">
+            <i class="fas fa-phone-alt"></i> Contáctanos
+        </a>
+    </div>
 
-    <footer>
-        <div style="max-width: 600px; margin: 0 auto;">
-            <p style="font-size: 1.2rem; margin-bottom: 15px; font-weight: 600;">Colegio Tlahtoani - Junta de Padres</p>
-            <p><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> Dirección: [Inserte dirección aquí]</p>
-            <p><i class="fas fa-phone" style="margin-right: 8px;"></i> Teléfono: [Inserte teléfono aquí]</p>
-            <p><i class="fas fa-envelope" style="margin-right: 8px;"></i> Email: [Inserte email aquí]</p>
-            
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-                <a href="#"><i class="fas fa-globe"></i></a>
-            </div>
-        </div>
-    </footer>
+    <a href="https://chatwith.io/es/s/63b7348567162" class="floating-btn">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 </body>
 </html>
